@@ -1,44 +1,32 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
+		// almacenamiento central
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			swapiUrl: " https://swapi.tech/api/",
+			people: [],
+			vehicules: [],
+			planets: [],
+			favorites: [],
 		},
+		// funciones
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-			},
-			changeColor: (index, color) => {
-				//get the store
+
+			getCharacters: async (endpoint) => {
+
 				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
+				const response = await fetch(store.swapiUrl + endpoint);
+				if (response.ok) {
+					const data = await response.json();
+					const baseList = data.results;
+					baseList.forEach( async (baseItems) => {
+						const newResponse = await fetch(baseItems.url)
+						const detailData = await newResponse.json();
+						setStore({[endpoint]: [...store[endpoint], detailData.result]})
+						console.log(`resultado ${endpoint}`,store[endpoint]);
+					});
+				}
 			}
-		}
+		},
 	};
 };
 
