@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import starwars from "../../img/star-wars-logo.jpg";
@@ -7,8 +7,20 @@ import { useParams } from "react-router-dom";
 
 export const CharacterDetailsView = ({  }) => {
 	const { store } = useContext(Context);
+	const [char,setChar]=useState(null)
 	
 	const params = useParams();
+	const formatted = params.id.replace('hack',"/")
+
+	useEffect(()=>{
+		async function getIndividualCharacter(id){
+			const value = await fetch(`https://www.swapi.tech/api/${id}`)
+			const response = await value.json()
+			setChar(response?.result)
+		}
+
+		getIndividualCharacter(formatted)
+	},[params])
 	// const descriptionView = store.people.find((detail) => params._id === detail._id )
 	
 
@@ -24,9 +36,9 @@ export const CharacterDetailsView = ({  }) => {
 							<div className="card-body">
 								<h5 className="card-title"> </h5>
 								<ul>
-									<li className="card-text col-md-8">Height:{store.people.height} </li>
-									<li className="card-text col-md-8">Mass: </li>
-									<li className="card-text col-md-8">Hair_color: </li>
+									<li className="card-text col-md-8">Height:{char?.properties?.height} </li>
+									<li className="card-text col-md-8">Mass:{char?.properties?.mass} </li>
+									<li className="card-text col-md-8">Hair_color:{char?.properties?.hair_color} </li>
 									<li className="card-text col-md-8">Skin_color: </li>
 									<li className="card-text col-md-8">Eye_color: </li>
 									<li className="card-text col-md-8">Birth_year: </li>

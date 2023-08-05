@@ -41,11 +41,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 
         setStore({ favorites: [...favoritesFiltered] });
       },
-      // removeFavorite: (index) => {
-      //   const { favorites } = getStore();
-      //   favorites.splice(index, 1);
-      //   setStore(...favorites);
-      // },
+      removeFavorite: (id) => {
+        const store = getStore();
+        const favoritesFiltered = store.favorites.filter((favorite) => {
+          return favorite !== id;
+        });
+
+        setStore({ favorites: [...favoritesFiltered] });
+      },
     },
   };
 };
