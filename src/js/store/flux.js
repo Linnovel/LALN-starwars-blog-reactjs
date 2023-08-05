@@ -26,21 +26,26 @@ const getState = ({ getStore, getActions, setStore }) => {
           }
         } catch (error) {}
       },
-	  addFavorite: (newFavorite) => {
-		const store = getStore();
-		console.log(newFavorite);
-		const onlyOne = store.favorites.some((item) => item === newFavorite);
-		if (onlyOne === true) {
-		  return;
-		} else {
-		  setStore({ favorites: [...store.favorites, newFavorite] });
-		}
-	  },
-	  removeFavorite: (index) => {
-		const { favorites } = getStore();
-		favorites.splice(index, 1);
-		setStore(...favorites);
-	  },
+      addFavorite: (newFavorite) => {
+        const store = getStore();
+        const onlyOne = store.favorites.some((item) => item === newFavorite);
+
+        if (!onlyOne) {
+          setStore({ favorites: [...store.favorites, newFavorite] });
+          return;
+        }
+
+        const favoritesFiltered = store.favorites.filter((favorite) => {
+          return favorite !== newFavorite;
+        });
+
+        setStore({ favorites: [...favoritesFiltered] });
+      },
+      // removeFavorite: (index) => {
+      //   const { favorites } = getStore();
+      //   favorites.splice(index, 1);
+      //   setStore(...favorites);
+      // },
     },
   };
 };
