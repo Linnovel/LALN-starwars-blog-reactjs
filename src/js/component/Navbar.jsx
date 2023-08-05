@@ -1,24 +1,56 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 
-export const Navbar = () => {
-	return (
-		<nav className="navbar navbar-light bg-light">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/100px-Star_Wars_Logo.svg.png" />
+export const Navbar = ({character, addFavorite}) => {
 
-    </a>
-    <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-   Favorites 0
-  </button>
-  <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-    <li><a className="dropdown-item active" href="#">Liked</a></li>
-   
-  </ul>
-</div>
-  </div>
-</nav>
-	);
+  const { store, actions } = useContext(Context);
+
+  return (
+
+    <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-black ">
+      <div className="container-fluid">
+        <Link to="/" className="navbar-brand ">
+          <img className="img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png" height="50" width="150" />
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link to="/" className="nav-link">Characters</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/planets" className="nav-link">Planets</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/Starships" className="nav-link">Starships</Link>
+            </li>
+          </ul>
+          <div className="d-flex ms-auto">
+            <div className="dropdown">
+              <button
+                onChange={()=> actions.addFavorite(id)} className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Favorites
+         </button>
+             
+              <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                 <i className="fas fa-trash"></i>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
 };
+
