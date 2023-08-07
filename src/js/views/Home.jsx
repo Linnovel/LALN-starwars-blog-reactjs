@@ -5,6 +5,7 @@ import { Carousel } from "../component/Carousel.jsx";
 import { Characters } from "../component/Characters.jsx";
 
 
+
 export const Home = () => {
 	const { store, actions } = useContext(Context)
 	const { addFavorite } = actions;
@@ -30,7 +31,7 @@ export const Home = () => {
 						);
 					})}
 				</div>
-					
+
 			</div>
 		</>
 	)

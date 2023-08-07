@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { Context } from '../store/appContext';
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
-  const {addFavorite}=actions
-  const size = store?.favorites?.length
+  const { addFavorite } = actions;
+  const size = store?.favorites?.length;
 
   return (
     <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-black ">
@@ -42,13 +42,14 @@ export const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/Starships" className="nav-link">
+              <Link to="/starships" className="nav-link">
                 Starships
               </Link>
             </li>
           </ul>
           <div className="d-flex ms-auto">
             <div className="dropdown">
+
               <button
                 onChange={() => addFavorite(id)}
                 className="btn btn-secondary dropdown-toggle"
@@ -56,18 +57,31 @@ export const Navbar = () => {
                 id="dropdownMenuButton1"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
+
               >
+
                 {size > 1 ? "Favorites" : "Favorite"} | {size}
+
               </button>
 
               <ul
                 className="dropdown-menu dropdown-menu-end"
                 aria-labelledby="dropdownMenuButton1"
+
               >
-                {store.favorites?.map((favorite)=>{
-                  return <i className="fas fa-trash" key={favorite} onClick={()=>actions.removeFavorite(favorite)}>{favorite}</i>
+
+                {store.favorites?.map((favorite) => {
+                  return (
+                    <i
+                      className="fas fa-trash"
+                      key={favorite}
+                      onClick={() => actions.removeFavorite(favorite)}
+                    >
+                      {favorite}
+
+                    </i>
+                  );
                 })}
-                
               </ul>
             </div>
           </div>

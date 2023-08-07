@@ -5,24 +5,25 @@ import starwars from "../../img/star-wars-logo.jpg";
 import { useParams } from "react-router-dom";
 
 
-export const CharacterDetailsView = ({  }) => {
+export const CharacterDetailsView = ({ }) => {
 	const { store } = useContext(Context);
-	const [char,setChar]=useState(null)
-	
-	const params = useParams();
-	const formatted = params.id.replace('hack',"/")
+	const [char, setChar] = useState(null)
 
-	useEffect(()=>{
-		async function getIndividualCharacter(id){
-			const value = await fetch(`https://www.swapi.tech/api/${id}`)
-			const response = await value.json()
-			setChar(response?.result)
+	const params = useParams();
+	const formatted = params.id.replace('hack', "/")
+
+
+	useEffect(() => {
+		async function getIndividualCharacter(id) {
+			const response = await fetch(`https://www.swapi.tech/api/${id}`)
+			const data = await response.json()
+			setChar(data?.result)
 		}
 
 		getIndividualCharacter(formatted)
-	},[params])
-	// const descriptionView = store.people.find((detail) => params._id === detail._id )
-	
+	}, [params])
+
+
 
 	return (
 		<>
@@ -34,15 +35,15 @@ export const CharacterDetailsView = ({  }) => {
 						</div>
 						<div className="col-md-8">
 							<div className="card-body">
-								<h5 className="card-title"> </h5>
+								<h5 className="card-title"> Character: {char?.properties?.name} </h5>
 								<ul>
-									<li className="card-text col-md-8">Height:{char?.properties?.height} </li>
-									<li className="card-text col-md-8">Mass:{char?.properties?.mass} </li>
-									<li className="card-text col-md-8">Hair_color:{char?.properties?.hair_color} </li>
-									<li className="card-text col-md-8">Skin_color: </li>
-									<li className="card-text col-md-8">Eye_color: </li>
-									<li className="card-text col-md-8">Birth_year: </li>
-									<li className="card-text col-md-8">Gender: </li>
+									<li className="card-text col-md-8">Height: {char?.properties?.height} </li>
+									<li className="card-text col-md-8">Mass: {char?.properties?.mass} </li>
+									<li className="card-text col-md-8">Hair color: {char?.properties?.hair_color} </li>
+									<li className="card-text col-md-8">Skin color: {char?.properties?.skin_color}</li>
+									<li className="card-text col-md-8">Eye color: {char?.properties?.eye_color}</li>
+									<li className="card-text col-md-8">Birth year: {char?.properties?.birth_year}</li>
+									<li className="card-text col-md-8">Gender: {char?.properties?.gender}</li>
 								</ul>
 							</div>
 						</div>
