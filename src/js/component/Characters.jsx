@@ -7,32 +7,21 @@ export function Characters({ character }) {
   const { _id: id, properties, uid } = character;
   const value = properties?.url?.match(/people/g).join()
 
-  //ya hice los cambios y ya puedo agregar a favoritos cualquier carta que eliga 
-
   function handleClick(e, id) {
     e.preventDefault()
-    actions.addFavorite(id)
+    actions.addFavorite(id, "people")
   }
 
   return (
     <div className="col-12 col-md-6 col-lg-4 p-2">
       <div className="card  m-3">
-        <img
-          src="https://picsum.photos/100/100"
-          className="card-img-top"
-          alt="..."
-        />
-        <div className="card-body text-dark bg-light">
+        <img src={`https://starwars-visualguide.com/assets/img/characters/${character.uid}.jpg`} />
+        <div className="card-body text-white bg-dark">
           <h5 className="card-title"> Name: {properties.name}</h5>
           <p className="card-text">Height: {properties.height}</p>
           <div className="d-flex justify-content-between align-items-center">
-            <a onClick={(e) => handleClick(e, id)} href="#" className="btn btn-outline-primary"
-            >
-              Favorites
-            </a>
-            <Link className="btn btn-primary" to={`/CharacterDetailsView/${value}hack${uid}`} onClick={() => actions.loadDataFromPeople(result.url)}>
-              Details
-            </Link>
+            <a onClick={(e) => handleClick(e, id)} href="#" className="btn btn btn-light"> Favorites <i class="fas fa-heart"></i></a>
+            <Link className="btn btn-success" to={`/CharacterDetailsView/${id}`} > Details </Link>
           </div>
         </div>
       </div>

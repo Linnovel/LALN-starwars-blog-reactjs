@@ -6,24 +6,18 @@ export function Card({ item, route }) {
   const { store, actions } = useContext(Context)
   const { _id: id, properties } = item;
 
-  // no recuerdo la funcionalidad de este componenete. 
 
   return (
     <div className="col-12 col-md-6 col-lg-4 p-2">
       <div className="card  m-3">
         <img
-          src="https://picsum.photos/100/100"
-          className="card-img-top"
-          alt="..."
-        />
+          src="https://picsum.photos/100/100" />
         <div className="card-body text-dark bg-light">
           <h5 className="card-title">Name: {properties.name}</h5>
           <p className="card-text">Height: {properties.height}</p>
           <div className="d-flex justify-content-between align-items-center">
-            <a onClick={() => actions.addFavorite(id)} href="#" className="btn btn-outline-primary"
-            >
-              Favorites card
-            </a>
+            <a onClick={() => actions.addFavorite(id)} href="#" className="btn btn-outline-primary">
+              Favorites card</a>
             <Link className="btn btn-primary" to={`${route}${id}`} onClick={() => actions.loadDataFromPeople(result.url)}>
               Details
             </Link>

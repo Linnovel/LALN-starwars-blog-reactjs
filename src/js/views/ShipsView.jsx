@@ -6,7 +6,7 @@ import { CardStarships } from "../component/CardStarships.jsx";
 
 
 export const ShipsView = () => {
-  const { store,actions } = useContext(Context);
+  const { store, actions } = useContext(Context);
   const { addFavorite } = actions;
   return (
     <div>
@@ -19,13 +19,13 @@ export const ShipsView = () => {
           </div>
         </div>
         <div className="row">
-        {store.vehicles.map(vehiculo => {
-          return (<CardStarships
-            vehiculo={vehiculo}
-            key={vehiculo._id}
-            addFavorite={addFavorite}
-          />)
-        })}
+          {store.vehicles.map(vehiculo => {
+            return (<CardStarships
+              vehiculo={vehiculo}
+              key={vehiculo._id}
+              addFavorite={addFavorite}
+            />)
+          })}
         </div>
       </div>
     </div>
@@ -34,5 +34,3 @@ export const ShipsView = () => {
 
 
 export default ShipsView
-
-// aqyu se mostratan los planetas con el carrusel
