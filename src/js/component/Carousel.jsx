@@ -4,6 +4,8 @@ import Starwars4 from "../../img/starwars4.jpg";
 import Starwars5 from "../../img/starwars5.jpg";
 import { Link } from "react-router-dom";
 
+// Refactorizar 
+
 export const Carousel = () => {
   return (
     <>
