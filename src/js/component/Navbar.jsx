@@ -5,6 +5,8 @@ import people from "../../img/people.png";
 import dead from "../../img/dead.png";
 import globe from "../../img/globe.png";
 
+//falta arreglar el responsive del navbar. los iconos y el boton desaparecen al verse desde el movil
+// Refactorizar 
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
@@ -22,8 +24,8 @@ export const Navbar = () => {
             width="150" />
         </Link>
         <a href="https://twitter.com/linnovel_dev" target="blank" />
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
+        <div className="collapse navbar-collapse " id="navbarNav">
+          <ul className="navbar-nav navbar-expand-lg">
             <li className="nav-item">
               <Link to="/" className="nav-link">
                 Characters <img src={people} height="25" width="25" />
@@ -46,12 +48,10 @@ export const Navbar = () => {
                 <a className="nav-link active" aria-current="page" href="https://github.com/Linnovel"><img src="https://seeklogo.com/images/G/github-logo-2E3852456C-seeklogo.com.png" height="25" width="25" /></a>
               </li>
             </ul>
-            <div className="dropdown"> <button onChange={() => addFavorite(id)} className="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" > {size > 1 ? "Favorites" : "Favorite"} | {size}  <i class="far fa-heart"></i></button>
-              <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1"
-              >  {store.favorites?.map((favorite) => {
-                return (
-                  <i className="fas fa-trash" key={favorite} onClick={() => actions.removeFavorite(favorite)}>{favorite.properties.name}</i>);
-              })}
+            <div className="dropdown"> <button onChange={() => addFavorite(id)} className="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="false" > {size > 1 ? "Favorites" : "Favorite"} | {size}  <i class="far fa-heart"></i></button>
+              <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1"> <li><a className="dropdown-item" href="#">Add Something!</a></li>
+              {store.favorites?.map((favorite) => {
+                return ( <i className="fas fa-trash" key={favorite} onClick={() => actions.removeFavorite(favorite)}>{favorite.properties.name}</i>);})}
               </ul>
             </div>
           </div>

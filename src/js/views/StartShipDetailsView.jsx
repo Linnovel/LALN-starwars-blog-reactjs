@@ -16,7 +16,7 @@ export const StartShipDetailsView = () => {
 		setStartShip(vehicles)
 	}, [store.vehicles, params])
 
-
+// Refactorizar 
 	return (
 		<>
 			<div className="container border-0 d-flex justify-content-center" >
@@ -41,7 +41,7 @@ export const StartShipDetailsView = () => {
 						</div>
 					</div>
 				</div>
-			</div>)
+			</div>
 			<Link to="/starships">
 				<button className="btn btn-primary d-grid gap-2 col-1 mx-auto">
 					Back to Home

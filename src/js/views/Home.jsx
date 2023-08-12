@@ -4,7 +4,7 @@ import "../../styles/home.css";
 import { Carousel } from "../component/Carousel.jsx";
 import { Characters } from "../component/Characters.jsx";
 
-
+// Refactorizar 
 
 export const Home = () => {
 	const { store, actions } = useContext(Context)

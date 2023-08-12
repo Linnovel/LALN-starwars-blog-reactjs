@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { Carousel } from "../component/Carousel.jsx";
 import { CardStarships } from "../component/CardStarships.jsx";
-
+// Refactorizar 
 
 export const ShipsView = () => {
   const { store, actions } = useContext(Context);

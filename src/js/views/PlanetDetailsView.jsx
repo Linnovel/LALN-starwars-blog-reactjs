@@ -4,7 +4,8 @@ import planets from "../../img/planets.jpg";
 import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
 
-
+// Tatoine no se muestra. problemas con la API De las imagenes de StarWars  
+// Refactorizar 
 
 export const PlanetDetailsView = () => {
 	const { store } = useContext(Context)

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import darthvader from "../../img/darthvader.jpg";
 import { useParams } from "react-router-dom";
-
+// Refactorizar 
 export const CharacterDetailsView = ({ }) => {
 	const { store } = useContext(Context);
 	const [char, setChar] = useState(null)

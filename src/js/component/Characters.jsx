@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { Context } from '../store/appContext';
 import { Link } from 'react-router-dom';
 
+// Refactorizar 
+
 export function Characters({ character }) {
   const { store, actions } = useContext(Context)
   const { _id: id, properties, uid } = character;

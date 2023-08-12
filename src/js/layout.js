@@ -19,6 +19,7 @@ const Layout = () => {
     <div>
       <BrowserRouter basename={basename}>
         <Navbar />
+        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/planets" element={<PlanetView />} />
