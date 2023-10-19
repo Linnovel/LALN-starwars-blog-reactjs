@@ -16,7 +16,7 @@ export const Navbar = () => {
 
 
   return (
-    <nav className="navbar sticky-top navbar-expand-lg navbar-dark flex-column flex-sm-row bg-black ">
+    <nav className="navbar sticky-top nav navbar-expand-lg navbar-dark flex-column flex-sm-row bg-black ">
       <Link to="/" className="navbar-brand p-2">
         <img
           className="img-fluid"
@@ -27,7 +27,7 @@ export const Navbar = () => {
       <div className="container-fluid ">
 
         <ul className=" nav ">
-          
+
           <li className="nav-item">
             <Link to="/planets" className="nav-link">
               Planets <img src={globe} height="25" width="25" />
