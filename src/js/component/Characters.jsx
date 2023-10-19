@@ -12,6 +12,7 @@ export function Characters({ character }) {
   function handleClick(e, id) {
     e.preventDefault()
     actions.addFavorite(id, "people")
+    
   }
 
   return (
