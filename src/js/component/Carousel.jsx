@@ -16,23 +16,23 @@ export const Carousel = () => {
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div className="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="1500">
+          <div className="carousel-item active" data-bs-interval="1500">
             <Link to={"/"}>
               <img src={Starwars4} className="d-block w-100" />
             </Link>
-            <div class="carousel-caption d-none d-md-block">
+            <div className="carousel-caption d-none d-md-block">
               <h5 className="text-warning">Characters</h5>
               <p className="text-warning">Protagonist from the movie Start Wars</p> </div> </div>
           <div className="carousel-item">
             <Link to={"/planets"}>
               <img src={Starwars5} className="d-block w-100" />
             </Link>
-            <div class="carousel-caption d-none d-md-block">
+            <div className="carousel-caption d-none d-md-block">
               <h5 className="text-warning">Planets</h5>
               <p className="text-warning">Planets across the Galaxy</p> </div> </div>
           <div className="carousel-item">
             <Link to={"/starships"}> <img src={Starwars2} className="d-block w-100" /></Link>
-            <div class="carousel-caption d-none d-md-block">
+            <div className="carousel-caption d-none d-md-block">
               <h5 className="text-warning">Star Ships</h5>
               <p className="text-warning">Star Ships of the Galaxy</p>
             </div> </div> </div>

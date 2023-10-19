@@ -18,28 +18,28 @@ export const CharacterDetailsView = ({ }) => {
 	return (
 		<>
 			<div className="container border-0">
-				<div className="card mb-3 border-0">
-					<div className="col-md-4">
-						<img src={darthvader} className="d-flex" width="1116" />
+				<div className="card ">
+					<div className="col">
+						<img src={darthvader} className="img-fluid" />
 					</div>
 					<div className="col-md-8">
 						<div className="card-body">
 							<h5 className="card-title"> Character: {char?.properties?.name} </h5>
 							<ul>
-								<li className="card-text col-md-8">Height: {char?.properties?.height} </li>
-								<li className="card-text col-md-8">Mass: {char?.properties?.mass} </li>
-								<li className="card-text col-md-8">Hair color: {char?.properties?.hair_color} </li>
-								<li className="card-text col-md-8">Skin color: {char?.properties?.skin_color}</li>
-								<li className="card-text col-md-8">Eye color: {char?.properties?.eye_color}</li>
-								<li className="card-text col-md-8">Birth year: {char?.properties?.birth_year}</li>
-								<li className="card-text col-md-8">Gender: {char?.properties?.gender}</li>
+								<li className="card-text ">Height: {char?.properties?.height} </li>
+								<li className="card-text ">Mass: {char?.properties?.mass} </li>
+								<li className="card-text ">Hair color: {char?.properties?.hair_color} </li>
+								<li className="card-text ">Skin color: {char?.properties?.skin_color}</li>
+								<li className="card-text ">Eye color: {char?.properties?.eye_color}</li>
+								<li className="card-text ">Birth year: {char?.properties?.birth_year}</li>
+								<li className="card-text ">Gender: {char?.properties?.gender}</li>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
 			<Link to="/">
-				<button className="btn btn-primary d-grid gap-2 col-1 mx-auto">
+				<button className="btn btn-primary d-grid p-2 my-2 mb-3 mx-auto">
 					Back to Home
 				</button>
 			</Link>

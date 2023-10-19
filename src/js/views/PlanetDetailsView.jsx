@@ -22,22 +22,22 @@ export const PlanetDetailsView = () => {
 	return (
 		<>
 			<div className="container border-0" >
-				<div className="card mb-3 border-0">
-					<div className="col-md-4">
-						<img src={planets} className="d-flex" width="1116" />
+				<div className="card ">
+					<div className="col">
 					</div>
+					<img src={planets} className="img-fluid " />
 					<div className="col-md-8">
 						<div className="card-body">
 							<h5 className="card-title">Name {plan?.properties?.name}</h5>
 							<ul>
-								<li className="card-text col-md-8">Diameter: {plan?.properties.diameter}</li>
-								<li className="card-text col-md-8">Rotation period: {plan?.properties.rotation_period}</li>
-								<li className="card-text col-md-8">Orbital period {plan?.properties.orbital_period}</li>
-								<li className="card-text col-md-8">Gravity {plan?.properties?.gravity}</li>
-								<li className="card-text col-md-8">Population: {plan?.properties?.population}</li>
-								<li className="card-text col-md-8">Climate: {plan?.properties?.climate}</li>
-								<li className="card-text col-md-8">Terrain: {plan?.properties?.terrain}</li>
-								<li className="card-text col-md-8">Surface water: {plan?.properties?.surface_water}</li>
+								<li className="card-text ">Diameter: {plan?.properties.diameter}</li>
+								<li className="card-text ">Rotation period: {plan?.properties.rotation_period}</li>
+								<li className="card-text ">Orbital period {plan?.properties.orbital_period}</li>
+								<li className="card-text ">Gravity {plan?.properties?.gravity}</li>
+								<li className="card-text ">Population: {plan?.properties?.population}</li>
+								<li className="card-text ">Climate: {plan?.properties?.climate}</li>
+								<li className="card-text ">Terrain: {plan?.properties?.terrain}</li>
+								<li className="card-text ">Surface water: {plan?.properties?.surface_water}</li>
 							</ul>
 						</div>
 					</div>
@@ -45,7 +45,7 @@ export const PlanetDetailsView = () => {
 			</div>
 			)
 			<Link to="/planets">
-				<button className="btn btn-primary d-grid gap-2 col-1 mx-auto">
+				<button className="btn btn-primary d-grid p-2 my-2 mb-3 mx-auto">
 					Back to Home
 				</button>
 			</Link>

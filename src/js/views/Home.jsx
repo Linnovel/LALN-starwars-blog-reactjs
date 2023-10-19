@@ -12,7 +12,7 @@ export const Home = () => {
 
 	return (
 		<>
-			<div className="container-sm 960">
+			<div className="container-sm ">
 				<div className="container-fluid">
 					<div className="row">
 						<div className="col-md-12">
