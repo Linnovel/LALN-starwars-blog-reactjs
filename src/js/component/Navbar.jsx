@@ -16,7 +16,7 @@ export const Navbar = () => {
 
 
   return (
-    <nav className="navbar sticky-top nav navbar-expand-lg navbar-dark flex-column flex-sm-row bg-black ">
+    <nav className="navbar sticky-top  navbar-expand-lg navbar-dark flex-column flex-sm-row bg-black ">
       <Link to="/" className="navbar-brand p-2">
         <img
           className="img-fluid"
