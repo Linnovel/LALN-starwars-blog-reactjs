@@ -17,23 +17,29 @@ export const CharacterDetailsView = ({ }) => {
 
 	return (
 		<>
-			<div className="container border-0">
-				<div className="card ">
-					<div className="col">
-						<img src={darthvader} className="img-fluid" />
-					</div>
-					<div className="col-md-8">
-						<div className="card-body">
-							<h5 className="card-title"> Character: {char?.properties?.name} </h5>
-							<ul>
-								<li className="card-text ">Height: {char?.properties?.height} </li>
-								<li className="card-text ">Mass: {char?.properties?.mass} </li>
-								<li className="card-text ">Hair color: {char?.properties?.hair_color} </li>
-								<li className="card-text ">Skin color: {char?.properties?.skin_color}</li>
-								<li className="card-text ">Eye color: {char?.properties?.eye_color}</li>
-								<li className="card-text ">Birth year: {char?.properties?.birth_year}</li>
-								<li className="card-text ">Gender: {char?.properties?.gender}</li>
-							</ul>
+			<div className="container-fluid border-0 my-4">
+				<div className="row">
+
+					<div className="col-4 align-self-center">
+						<div className="card ">
+							<img src={`https://starwars-visualguide.com/assets/img/characters/${char?.uid}.jpg`} />
+						</div>
+						<div className="col">
+							<div className="card">
+								<div className="card-body">
+
+									<h5 className="card-title p-2"> Character: {char?.properties?.name} </h5>
+									<ul>
+										<li className="card-text ">Height: {char?.properties?.height} </li>
+										<li className="card-text ">Mass: {char?.properties?.mass} </li>
+										<li className="card-text ">Hair color: {char?.properties?.hair_color} </li>
+										<li className="card-text ">Skin color: {char?.properties?.skin_color}</li>
+										<li className="card-text ">Eye color: {char?.properties?.eye_color}</li>
+										<li className="card-text ">Birth year: {char?.properties?.birth_year}</li>
+										<li className="card-text ">Gender: {char?.properties?.gender}</li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

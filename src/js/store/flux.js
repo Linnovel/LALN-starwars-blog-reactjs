@@ -29,6 +29,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 console.log("hola")
                 localStorage.setItem(endpoint, JSON.stringify(store[endpoint]))
               }
+
             });
           }
         } catch (error) { }
