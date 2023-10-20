@@ -24,9 +24,7 @@ const getState = ({ getStore, getActions, setStore }) => {
               const newResponse = await fetch(baseItems.url);
               const detailData = await newResponse.json();
               setStore({ [endpoint]: [...store[endpoint], detailData.result] });
-              console.log(`resultado ${endpoint}`, store[endpoint]);
               if (store[endpoint].length === 10) {
-                console.log("hola")
                 localStorage.setItem(endpoint, JSON.stringify(store[endpoint]))
               }
 

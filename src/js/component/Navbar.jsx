@@ -14,9 +14,10 @@ export const Navbar = () => {
   const { addFavorite } = actions;
   const size = store?.favorites?.length;
 
-  size === -1
-    ? toast.error("Favorite is empty")
-    : toast.success(`You have ${size} favorite`);
+  size === 0
+    ? toast.error(`You have ${size} Favorites`) 
+    : toast.success(`You have ${size} favorite :D`);
+  
   
 
   return (
