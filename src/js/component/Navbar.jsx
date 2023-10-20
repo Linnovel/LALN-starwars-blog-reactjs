@@ -14,10 +14,12 @@ export const Navbar = () => {
   const { addFavorite } = actions;
   const size = store?.favorites?.length;
 
-  if(size === +1 ) {
+  console.log(size)
+
+  if(size > 100  ) {
     toast.error(`You have ${size} favorite`)
   } else {
-    toast.success(`You have ${size} favorites`)
+    toast.info(`You have ${size} favorites`)
   }
   
   
@@ -75,11 +77,11 @@ export const Navbar = () => {
               <li>
                 <a className="dropdown-item">Add Something!</a>
               </li>
-              {store.favorites?.map((favorite) => {
+              {store.favorites?.map((favorite, index) => {
                 return (
                   <i
                     className="fas fa-trash"
-                    key={favorite}
+                    key={index}
                     onClick={() => actions.removeFavorite(favorite)}
                   >
                     {favorite.properties.name}
