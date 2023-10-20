@@ -15,7 +15,7 @@ export const Navbar = () => {
   const size = store?.favorites?.length;
 
   if(size === +1 ) {
-    toast.success(`You have ${size} favorite`)
+    toast.error(`You have ${size} favorite`)
   } else {
     toast.success(`You have ${size} favorites`)
   }
