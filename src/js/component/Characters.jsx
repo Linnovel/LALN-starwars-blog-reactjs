@@ -25,7 +25,7 @@ export function Characters({ character }) {
           <p className="card-text">Birth Year: {properties.birth_year}</p>
           <p className="card-text">Eye Color: {properties.eye_color}</p>
           <div className="d-flex justify-content-between align-items-center">
-            <a onClick={(e) => handleClick(e, id)} href="#" className="btn btn btn-light "> Like this post</a>
+            <a onClick={(e) => handleClick(e, id)} href="#" className="btn btn btn-light "> "♥"</a>
             <Link className="btn btn-success " to={`/CharacterDetailsView/${id}`}  > More Details </Link>
           </div>
         </div>

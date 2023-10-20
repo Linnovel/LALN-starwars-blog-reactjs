@@ -21,7 +21,7 @@ export function CardStarships({ vehiculo }) {
           <h5 className="card-title">Name: {properties.name}</h5>
           <p className="card-text">Class: {properties.model}</p>
           <div className="d-flex justify-content-between align-items-center">
-            <a href="#" className="btn btn-light" onClick={(e) => handleClick(e, id)}> Like this post </a>
+            <a href="#" className="btn btn-light" onClick={(e) => handleClick(e, id)}> "♥" </a>
             <Link className="btn btn-success" to={`/StartShipDetailsView/${id}`} >More Details </Link> </div>
         </div>
       </div>

@@ -13,10 +13,10 @@ function Footer() {
             <div className="row mt-3">
               <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                 <h6 className="text-uppercase fw-bold mb-4">
-                  <i className="fas fa-gem me-3"></i>Hi my name is Luis
+                  <i className="fas fa-gem me-3"></i>Who I'm
                 </h6>
                 <p>
-                  I hope you like my work, I'm a graphic designer and fullstack Developer
+                 My name is Luis Linares I'm a graphic designer and fullstack Developer
                   based in Venezuela, If you like my work, you can reach me in my social media links.
                 </p>
               </div>
