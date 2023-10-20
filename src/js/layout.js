@@ -9,6 +9,9 @@ import { Navbar } from "./component/Navbar.jsx";
 import { PlanetView } from "./views/PlanetView.jsx";
 import { ShipsView } from "./views/ShipsView.jsx";
 import { Carousel } from "./component/Carousel.jsx";
+import Footer from "./component/Footer.jsx";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 //create your first component
 const Layout = () => {
@@ -19,6 +22,18 @@ const Layout = () => {
     <div>
       <BrowserRouter basename={basename}>
         <Navbar />
+        <ToastContainer
+            position="top-center"
+            autoClose={1500}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
         
         <Routes>
           <Route path="/" element={<Home />} />
@@ -38,6 +53,7 @@ const Layout = () => {
           />
           <Route path="*" element={<h1>Not found!</h1>} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
