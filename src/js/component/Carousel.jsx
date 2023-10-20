@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 export const Carousel = () => {
   return (
     <>
-      <div id="carouselExampleIndicators" className="carousel slide carousel-fade my-4" data-bs-ride="carousel">
+      <div id="carouselExampleIndicators" className="carousel slide carousel-fade my-4 rounded-sm" data-bs-ride="carousel">
         <div className="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -21,20 +21,21 @@ export const Carousel = () => {
               <img src={Starwars4} className="d-block w-100" />
             </Link>
             <div className="carousel-caption d-none d-md-block">
-              <h5 className="text-warning">Characters</h5>
-              <p className="text-warning">Protagonist from the movie Start Wars</p> </div> </div>
+              <h5 className="text-warning fs-1 fw-bold">Characters</h5>
+              <p className="text-warning fs-1 fw-bold">Protagonist from the movie Start Wars</p>
+               </div> </div>
           <div className="carousel-item">
             <Link to={"/planets"}>
               <img src={Starwars5} className="d-block w-100" />
             </Link>
             <div className="carousel-caption d-none d-md-block">
-              <h5 className="text-warning">Planets</h5>
-              <p className="text-warning">Planets across the Galaxy</p> </div> </div>
+              <h5 className="text-warning fs-1 fw-bold">Planets</h5>
+              <p className="text-warning fs-1 fw-bold">Planets across the Galaxy</p> </div> </div>
           <div className="carousel-item">
             <Link to={"/starships"}> <img src={Starwars2} className="d-block w-100" /></Link>
             <div className="carousel-caption d-none d-md-block">
-              <h5 className="text-warning">Star Ships</h5>
-              <p className="text-warning">Star Ships of the Galaxy</p>
+              <h5 className="text-warning fs-1 fw-bold">Star Ships</h5>
+              <p className="text-warning fs-1 fw-bold">Star Ships of the Galaxy</p>
             </div> </div> </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>

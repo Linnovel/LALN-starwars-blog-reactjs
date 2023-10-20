@@ -21,11 +21,14 @@ export const PlanetDetailsView = () => {
 
 	return (
 		<>
-			<div className="container border-0" >
+			<div className="container border-0 my-3 fix" >
 				<div className="card ">
 					<div className="col">
 					</div>
-					<img src={planets} className="img-fluid " />
+					<img
+                src={`https://starwars-visualguide.com/assets/img/planets/${plan?.uid}.jpg`}
+              />
+
 					<div className="col-md-8">
 						<div className="card-body">
 							<h5 className="card-title">Name {plan?.properties?.name}</h5>
@@ -41,14 +44,14 @@ export const PlanetDetailsView = () => {
 							</ul>
 						</div>
 					</div>
-				</div>
-			</div>
-			)
 			<Link to="/planets">
 				<button className="btn btn-primary d-grid p-2 my-2 mb-3 mx-auto">
 					Back to Home
 				</button>
 			</Link>
+				</div>
+			</div>
+			)
 		</>
 	);
 };

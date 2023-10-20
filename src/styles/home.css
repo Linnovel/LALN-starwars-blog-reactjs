@@ -1,6 +1,6 @@
 body {
   background-color: black;
-  background-image: url(https://i.pinimg.com/originals/ac/0c/83/ac0c83b56f7c0d335855834c8a82c364.gif);
+  background-image: url('https://images.pexels.com/photos/3214110/pexels-photo-3214110.jpeg?cs=srgb&dl=pexels-frank-cone-3214110.jpg&fm=jpg');
   background-size: cover;
   background-attachment: fixed;
 }
@@ -33,3 +33,10 @@ body {
   box-shadow: 5px 10px 20px 1px white;
   transition: all 0.7s radial;
 }
+
+.fix {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

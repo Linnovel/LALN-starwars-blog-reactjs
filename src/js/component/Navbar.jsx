@@ -13,7 +13,7 @@ export const Navbar = () => {
   const { addFavorite } = actions;
   const size = store?.favorites?.length;
 
-
+  
 
   return (
     <nav className="navbar sticky-top  navbar-expand-lg navbar-dark flex-column flex-sm-row bg-black ">
@@ -27,6 +27,11 @@ export const Navbar = () => {
       <div className="container-fluid ">
 
         <ul className=" nav ">
+        <li className="nav-item">
+              <Link to="/" className="nav-link">
+                Characters <img src={people} height="25" width="25" />
+              </Link>
+            </li>
 
           <li className="nav-item">
             <Link to="/planets" className="nav-link">
@@ -38,6 +43,7 @@ export const Navbar = () => {
               Starships <img src={dead} height="25" width="25" />
             </Link>
           </li>
+
         </ul>
         <div className="row justify-content-start ">
           <div className="dropdown"> <button onChange={() => addFavorite(id)} className="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="false" > {size > 1 ? "Favorites" : "Favorite"} | {size}  <i className="far fa-heart"></i></button>

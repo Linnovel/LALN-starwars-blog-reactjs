@@ -19,10 +19,12 @@ export const StartShipDetailsView = () => {
 	// Refactorizar 
 	return (
 		<>
-			<div className="container border-0 " >
+			<div className="container border-0 my-3 fix" >
 				<div className="card ">
 					<div className="col">
-						<img src={Starwars1} className="img-fluid" />
+						 <img
+                src={`https://starwars-visualguide.com/assets/img/vehicles/${startShip?.uid}.jpg`}
+              />
 					</div>
 					<div className="col-md-8">
 						<div className="card-body">
@@ -40,13 +42,13 @@ export const StartShipDetailsView = () => {
 							</ul>
 						</div>
 					</div>
-				</div>
-			</div>
 			<Link to="/starships">
 				<button className="btn btn-primary d-grid p-2 my-2 mb-3 mx-auto">
 					Back to Home
 				</button>
 			</Link>
+				</div>
+			</div>
 		</>
 	);
 };
