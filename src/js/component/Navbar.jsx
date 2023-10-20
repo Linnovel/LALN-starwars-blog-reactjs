@@ -14,14 +14,8 @@ export const Navbar = () => {
   const { addFavorite } = actions;
   const size = store?.favorites?.length;
 
-  console.log(size)
-
-  if(size === 0  ) {
-    toast.error(`You have ${size} favorite`)
-  } else {
-    toast.success(`You have ${size} favorites`)
-  }
   
+  size === 0 ? toast.info(`You have ${size} favorite ♡`) : toast.success(`You have ${size} favorite ♥ `)
   
 
   return (
@@ -66,8 +60,8 @@ export const Navbar = () => {
               data-bs-auto-close="false"
             >
               {" "}
-              {size > 1 ? "Favorites" : "Favorite"} | {size}{" "}
-              <i className="far fa-heart"></i>
+              {size > 1 ? "Your Favorites" : " Your Favorites"} | {size}{" "}
+              {size ? "♥" : "♡"}
             </button>
             <ul
               className="dropdown-menu dropdown-menu-end"

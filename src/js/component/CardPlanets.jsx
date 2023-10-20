@@ -22,7 +22,7 @@ export function CardPlanets({ planeta }) {
           <h5 className="card-title">Name: {properties.name}</h5>
           <p className="card-text">Population: {properties.population}</p>
           <div className="d-flex justify-content-between align-items-center">
-            <a onClick={(e) => handleClick(e, id)} href="#" className="btn btn btn-light" >Favorites <i class="fas fa-heart"></i></a>
+            <a onClick={(e) => handleClick(e, id)} href="#" className="btn btn btn-light" > {handleClick ? "♡" : "♥"}</a>
             <Link className="btn btn-success" to={`/PlanetDetailsView/${id}`}  >
               More Details </Link>
           </div>
