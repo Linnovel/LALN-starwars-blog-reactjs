@@ -16,10 +16,10 @@ export const Navbar = () => {
 
   console.log(size)
 
-  if(size > 100  ) {
+  if(size === 0  ) {
     toast.error(`You have ${size} favorite`)
   } else {
-    toast.info(`You have ${size} favorites`)
+    toast.success(`You have ${size} favorites`)
   }
   
   
