@@ -15,7 +15,7 @@ export const Navbar = () => {
   const size = store?.favorites?.length;
 
   
-  size === 0 ? toast.info(`You have ${size} favorite ♡`) : toast.success(`You have ${size} favorite ♥ `)
+  size >= 1 ? toast.success(`You have ${size} favorite ♥ `) : ('')
   
 
   return (
