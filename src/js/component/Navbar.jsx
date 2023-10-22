@@ -13,11 +13,12 @@ export const Navbar = () => {
   const { store, actions } = useContext(Context);
   const { addFavorite } = actions;
   const size = store?.favorites?.length;
-
+  const getName = store?.favorites?.id;
+console.log(getName)
   
-  size >= 1 ? toast.success(`You have ${size} favorite ♥ `) : ('')
+  size >= 1 ? toast.success(`You have ${size} ${getName} favorite ♥  `) : ('')
   
-
+  
   return (
     <nav className="navbar sticky-top  navbar-expand-lg navbar-dark flex-column flex-sm-row bg-black ">
       <Link to="/" className="navbar-brand p-2">
