@@ -13,42 +13,39 @@ export const Navbar = () => {
   const { store, actions } = useContext(Context);
   const { addFavorite } = actions;
   const size = store?.favorites?.length;
-  const getName = store?.favorites?.id;
-console.log(getName)
-  
-  size >= 1 ? toast.success(`You have ${size} ${getName} favorite ♥  `) : ('')
+
+  size >= 1 ? toast.success(`You have ${size}  favorite ♥  `) : ('')
   
   
   return (
-    <nav className="navbar sticky-top  navbar-expand-lg navbar-dark flex-column flex-sm-row bg-black ">
-      <Link to="/" className="navbar-brand p-2">
+    <nav className="navbar sticky-top  navbar-expand-lg navbar-dark  bg-black ">
+        <div className="container d-flex justify-content-start  ">
+      <Link to="/" className="navbar-brand p-2 ">
         <img
           className="img-fluid"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png"
-          height="50"
-          width="150"
+          height="50px"
+          width="150px"
         />
       </Link>
-      <div className="container-fluid ">
         <ul className=" nav ">
           <li className="nav-item">
-            <Link to="/" className="fs-5">
-              Characters <img src={people} height="25" width="25" />
+            <Link to="/" className="fs-5 p-3 mb-2 my-2">
+              Characters <img src={people} height="22px" width="22px" />
             </Link>
           </li>
 
           <li className="nav-item">
-            <Link to="/planets" className="fs-5">
-              Planets <img src={globe} height="25" width="25" />
+            <Link to="/planets" className="fs-5 p-3 mb-2 my-2">
+              Planets <img src={globe} height="22px" width="22px" />
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/starships" className="fs-5">
-              Starships <img src={dead} height="25" width="25" />
+            <Link to="/starships" className="fs-5 p-3 mb-2 my-2">
+              Starships <img src={dead} height="22px" width="22px" />
             </Link>
           </li>
-        </ul>
-        <div className="row justify-content-start ">
+        <div className=" justify-content-end ">
           <div className="dropdown">
             {" "}
             <button
@@ -59,7 +56,7 @@ console.log(getName)
               data-bs-toggle="dropdown"
               aria-expanded="false"
               data-bs-auto-close="false"
-            >
+              >
               {" "}
               {size > 1 ? "Your Favorites" : " Your Favorites"} | {size}{" "}
               {size ? "♥" : "♡"}
@@ -67,7 +64,7 @@ console.log(getName)
             <ul
               className="dropdown-menu dropdown-menu-end"
               aria-labelledby="dropdownMenuButton1"
-            >
+              >
               {" "}
               <li>
                 <a className="dropdown-item">Add Something!</a>
@@ -75,9 +72,9 @@ console.log(getName)
               {store.favorites?.map((favorite, index) => {
                 return (
                   <i
-                    className="fas fa-trash"
-                    key={index}
-                    onClick={() => actions.removeFavorite(favorite)}
+                  className="fas fa-trash"
+                  key={index}
+                  onClick={() => actions.removeFavorite(favorite)}
                   >
                     {favorite.properties.name}
                   </i>
@@ -86,6 +83,7 @@ console.log(getName)
             </ul>
           </div>
         </div>
+              </ul>
       </div>
     </nav>
   );
